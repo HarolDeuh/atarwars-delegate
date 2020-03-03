@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-Bold.ttf">
+            <string>Ubuntu-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StarWarsDelegate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star-wars-logo" translatesAutoresizingMaskIntoConstraints="NO" id="DD2-2z-pgz">
+                                <rect key="frame" x="59.5" y="140" width="295" height="126"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="battle-light-saber" translatesAutoresizingMaskIntoConstraints="NO" id="jhy-ur-HhO">
+                                <rect key="frame" x="163.5" y="376" width="87" height="87"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Side" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAJ-uW-seJ">
+                                <rect key="frame" x="60.5" y="543" width="293" height="139.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="293" id="hbU-G5-lwR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="51"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BV-KT-iP4" customClass="CustomButton" customModule="StarWarsDelegate" customModuleProvider="target">
+                                <rect key="frame" x="64.5" y="772" width="285" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="BA3-2B-Ugk"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="285" id="qsa-km-sgo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="I choose my power">
+                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="chooseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6hy-vV-x1A"/>
+                                    <segue destination="HnD-e6-5I3" kind="presentation" identifier="goToSide" id="fN0-K1-mb0"/>
+                                </connections>
+                            </button>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="WJJ-eB-Aqh">
+                                <rect key="frame" x="87" y="334.5" width="240" height="227.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="STw-Vr-0rr">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="173"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="173" id="q7a-A5-uHu"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cW-lk-2aw">
+                                        <rect key="frame" x="72" y="205" width="96.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.074509803921568626" green="0.074509803921568626" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jhy-ur-HhO" firstAttribute="top" secondItem="DD2-2z-pgz" secondAttribute="bottom" constant="110" id="86S-e6-Zd0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8BV-KT-iP4" secondAttribute="bottom" constant="32" id="Bhs-rx-gD5"/>
+                            <constraint firstItem="iAJ-uW-seJ" firstAttribute="top" secondItem="jhy-ur-HhO" secondAttribute="bottom" constant="80" id="CNV-qC-ILA"/>
+                            <constraint firstItem="jhy-ur-HhO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DxK-bh-px5"/>
+                            <constraint firstItem="WJJ-eB-Aqh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N69-4m-Rg1"/>
+                            <constraint firstItem="8BV-KT-iP4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PDE-WU-x7g"/>
+                            <constraint firstItem="DD2-2z-pgz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="96" id="W9k-V7-8YP"/>
+                            <constraint firstItem="DD2-2z-pgz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dO4-AA-uCC"/>
+                            <constraint firstItem="iAJ-uW-seJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="osF-uK-KJM"/>
+                            <constraint firstItem="WJJ-eB-Aqh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q52-4t-gu1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="chooseButton" destination="8BV-KT-iP4" id="tg8-px-VyW"/>
+                        <outlet property="chrImageView" destination="STw-Vr-0rr" id="315-22-pTO"/>
+                        <outlet property="sideLabel" destination="6cW-lk-2aw" id="fLY-77-FQ5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+        <!--Choose Side View Controller-->
+        <scene sceneID="uhE-9K-uaI">
+            <objects>
+                <viewController id="HnD-e6-5I3" customClass="ChooseSideViewController" customModule="StarWarsDelegate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T7Z-04-8Nc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6J-yd-ym6">
+                                <rect key="frame" x="0.0" y="418.5" width="414" height="5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="0WZ-mz-YFC"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="dark-light-saber" translatesAutoresizingMaskIntoConstraints="NO" id="ff4-Ei-WZc">
+                                <rect key="frame" x="120.5" y="514.5" width="173" height="173"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="force-light-saber" translatesAutoresizingMaskIntoConstraints="NO" id="Y7r-KA-gve">
+                                <rect key="frame" x="152" y="91" width="110" height="173"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njR-Bb-N9G">
+                                <rect key="frame" x="152" y="296" width="110" height="35"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                <state key="normal" title="THE FORCE">
+                                    <color key="titleColor" red="0.0" green="0.42745098039215684" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="forceButtonPressed:" destination="HnD-e6-5I3" eventType="touchUpInside" id="nb9-b5-Z7j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5N-xL-kUa">
+                                <rect key="frame" x="132" y="719.5" width="150" height="35"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                <state key="normal" title="THE DARK SIDE">
+                                    <color key="titleColor" red="1" green="0.31372549019607843" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="darkButtonPressed:" destination="HnD-e6-5I3" eventType="touchUpInside" id="qXO-u0-I6N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.074509803921568626" green="0.074509803921568626" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="z6J-yd-ym6" firstAttribute="centerY" secondItem="T7Z-04-8Nc" secondAttribute="centerY" id="JM6-SL-7Lg"/>
+                            <constraint firstItem="njR-Bb-N9G" firstAttribute="top" secondItem="Y7r-KA-gve" secondAttribute="bottom" constant="32" id="LuN-7g-j3d"/>
+                            <constraint firstItem="z6J-yd-ym6" firstAttribute="leading" secondItem="P1r-iU-u8H" secondAttribute="leading" id="bqz-R0-8bd"/>
+                            <constraint firstItem="njR-Bb-N9G" firstAttribute="centerX" secondItem="T7Z-04-8Nc" secondAttribute="centerX" id="elv-92-zNl"/>
+                            <constraint firstItem="P1r-iU-u8H" firstAttribute="trailing" secondItem="z6J-yd-ym6" secondAttribute="trailing" id="g2j-P8-pqZ"/>
+                            <constraint firstItem="ff4-Ei-WZc" firstAttribute="top" secondItem="z6J-yd-ym6" secondAttribute="bottom" constant="91" id="g6b-5R-2wr"/>
+                            <constraint firstItem="Y7r-KA-gve" firstAttribute="centerX" secondItem="T7Z-04-8Nc" secondAttribute="centerX" id="hZG-xg-1gT"/>
+                            <constraint firstItem="c5N-xL-kUa" firstAttribute="centerX" secondItem="T7Z-04-8Nc" secondAttribute="centerX" id="peB-Dq-hVb"/>
+                            <constraint firstItem="ff4-Ei-WZc" firstAttribute="centerX" secondItem="T7Z-04-8Nc" secondAttribute="centerX" id="tmF-NC-Isg"/>
+                            <constraint firstItem="c5N-xL-kUa" firstAttribute="top" secondItem="ff4-Ei-WZc" secondAttribute="bottom" constant="32" id="vJ1-DN-Zsw"/>
+                            <constraint firstItem="Y7r-KA-gve" firstAttribute="top" secondItem="P1r-iU-u8H" secondAttribute="top" constant="91" id="wKj-Xz-nJv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="P1r-iU-u8H"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hpw-Aq-YJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874" y="127"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="battle-light-saber" width="87" height="87"/>
+        <image name="dark-light-saber" width="173" height="173"/>
+        <image name="force-light-saber" width="110" height="173"/>
+        <image name="star-wars-logo" width="295" height="126"/>
+    </resources>
+</document>
