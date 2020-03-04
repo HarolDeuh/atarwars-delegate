@@ -13,10 +13,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var chooseButton: CustomButton!
     @IBOutlet weak var chrImageView: UIImageView!
     @IBOutlet weak var sideLabel: UILabel!
+    @IBOutlet weak var resultStackView: UIStackView!
+    @IBOutlet weak var lightsabersImageView: UIImageView!
     
-    @IBAction func chooseButtonPressed(_ sender: Any) {
-        let chooseVC = ChooseSideViewController()
-        chooseVC.sideDelegate = self
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var instructionLabel: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBAction func chooseButtonPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "segueToSide", sender: nil)
+        resultStackView.isHidden = false
+        logoImageView.isHidden = true
+        instructionLabel.isHidden = true
+        lightsabersImageView.isHidden = true
+        
+        
+        chooseButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        chooseButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        chooseButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToSide", let destinationViewController = segue.destination as? ChooseSideViewController {
+            destinationViewController.sideDelegate = self
+        }
     }
     
     
@@ -39,11 +61,15 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: ChooseSideDelegate {
-    func didSelectSide(mainView: UIImage, mainLabel: String, mainBkg: UIColor) {
+    func didSelectSide(mainView: UIImage, mainLabel: String, mainBkg: UIColor, sideTextColor: UIColor) {
         chrImageView.image = mainView
-        sideLabel.text = mainLabel
+        sideLabel.text = mainLabel.uppercased()
         view.backgroundColor = mainBkg
+        
+        sideLabel.textColor = sideTextColor
     }
+    
+    
     
     
 }

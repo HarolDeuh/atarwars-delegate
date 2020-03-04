@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol ChooseSideDelegate {
-    func didSelectSide(mainView: UIImage, mainLabel: String, mainBkg: UIColor)
+protocol ChooseSideDelegate : class {
+    func didSelectSide(mainView: UIImage, mainLabel: String, mainBkg: UIColor, sideTextColor: UIColor)
 }
 
 class ChooseSideViewController: UIViewController {
     
-    var sideDelegate: ChooseSideDelegate!
+    weak var sideDelegate: ChooseSideDelegate?
     
     
     @IBAction func forceButtonPressed(_ sender: UIButton) {
@@ -23,7 +23,7 @@ class ChooseSideViewController: UIViewController {
             return
         }
         
-        sideDelegate.didSelectSide(mainView: #imageLiteral(resourceName: "r2d2"), mainLabel: "may the force be with u !", mainBkg: #colorLiteral(red: 0.4431372549, green: 0.6823529412, blue: 0.968627451, alpha: 1))
+        sideDelegate?.didSelectSide(mainView: #imageLiteral(resourceName: "r2d2"), mainLabel: "may the force be with u !", mainBkg: #colorLiteral(red: 0.4431372549, green: 0.6823529412, blue: 0.968627451, alpha: 1), sideTextColor: #colorLiteral(red: 0, green: 0.4274509804, blue: 0.9411764706, alpha: 1))
         dismiss(animated: true, completion: nil)
         
     }
@@ -35,7 +35,7 @@ class ChooseSideViewController: UIViewController {
             return
         }
         
-        sideDelegate.didSelectSide(mainView: #imageLiteral(resourceName: "dark-vador"), mainLabel: "u are my son !", mainBkg: #colorLiteral(red: 0.9294117647, green: 0.5490196078, blue: 0.5411764706, alpha: 1))
+        sideDelegate?.didSelectSide(mainView: #imageLiteral(resourceName: "dark-vador"), mainLabel: "u are my son !", mainBkg: #colorLiteral(red: 0.9294117647, green: 0.5490196078, blue: 0.5411764706, alpha: 1), sideTextColor: #colorLiteral(red: 1, green: 0.3137254902, blue: 0.137254902, alpha: 1))
         dismiss(animated: true, completion: nil)
     }
     
